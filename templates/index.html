@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee House</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="logo">☕ Coffee House</div>
+    <nav>
+        <a href="/">Գլխավոր</a>
+        <a href="#about">Մեր մասին</a>
+        <a href="#menu">Մենյու</a>
+        <a href="/contact">Կապ</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <p class="small-title">Բարի գալուստ</p>
+        <h1>Սուրճ, որը<br>ստեղծում է տրամադրություն</h1>
+        <p>Թարմ սուրճ, համեղ դեսերտներ և հարմարավետ միջավայր՝ ձեր օրվա ամենալավ պահերի համար։</p>
+        <a class="button" href="#menu">Դիտել մենյուն</a>
+    </div>
+</section>
+
+<section id="about" class="section about">
+    <h2>Մեր մասին</h2>
+    <p>
+        Coffee House-ը փոքրիկ և հարմարավետ սրճարան է, որտեղ կարելի է
+        հանդիպել ընկերների հետ, աշխատել կամ պարզապես վայելել լավ սուրճ։
+        Մենք կարևորում ենք որակը, ջերմ սպասարկումը և հաճելի մթնոլորտը։
+    </p>
+</section>
+
+<section id="menu" class="section">
+    <h2>Մեր մենյուն</h2>
+    <div class="cards">
+        {% for item in menu %}
+        <div class="card">
+            <div class="icon">☕</div>
+            <h3>{{ item.name }}</h3>
+            <p>{{ item.description }}</p>
+            <strong>{{ item.price }}</strong>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Պատրա՞ստ ես սուրճի ընդմիջման</h2>
+    <p>Այցելիր մեզ և ստեղծիր քո օրվա սիրելի պահը։</p>
+    <a class="button light" href="/contact">Կապ մեզ հետ</a>
+</section>
+
+<footer>
+    <p>© 2026 Coffee House | Բոլոր իրավունքները պաշտպանված են</p>
+</footer>
+
+</body>
+</html>

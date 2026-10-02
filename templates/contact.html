@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Կապ | Coffee House</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="logo">☕ Coffee House</div>
+    <nav>
+        <a href="/">Գլխավոր</a>
+        <a href="/#about">Մեր մասին</a>
+        <a href="/#menu">Մենյու</a>
+        <a href="/contact">Կապ</a>
+    </nav>
+</header>
+
+<section class="contact-page">
+    <div class="contact-box">
+        <h1>Կապ մեզ հետ</h1>
+        <p>Ուղարկիր մեզ հաղորդագրություն։</p>
+
+        {% if message %}
+            <div class="success">{{ message }}</div>
+        {% endif %}
+
+        <form method="POST">
+            <input type="text" name="name" placeholder="Ձեր անունը" required>
+            <input type="email" name="email" placeholder="Էլ․ փոստ" required>
+            <textarea name="text" placeholder="Ձեր հաղորդագրությունը" rows="5" required></textarea>
+            <button type="submit">Ուղարկել</button>
+        </form>
+
+        <div class="info">
+            <p>📍 Երևան, Հայաստան</p>
+            <p>📞 +374 00 00 00 00</p>
+            <p>✉️ info@coffeehouse.am</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Coffee House</p>
+</footer>
+
+</body>
+</html>
